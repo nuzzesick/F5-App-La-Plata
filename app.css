@@ -1,0 +1,254 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: 'Montserrat' , sans-serif;
+  background: white;
+}
+::-webkit-scrollbar {
+	border-radius: 2px;
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #30333c;
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #83888c;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #93989c;
+	border-radius: 2px;
+}
+img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+  display: none;
+}
+*{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+  box-sizing: border-box;
+}
+*:focus {
+  outline:none !important;
+}
+button {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat' , sans-serif;
+}
+button:focus {
+  outline: 0;
+  border: none
+}
+button:active {
+  outline: 0;
+  border: none;
+}
+input {
+  font-family: 'Montserrat' , sans-serif;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  height: 14.8vh;
+  background-color: white;
+  border-bottom: 0.0992063492063492vh solid #B8B8B8;
+}
+.headerContent {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1.8vh;
+  width: 90%;
+  height: 7.6vh;
+  align-items: center;
+  justify-content: space-between;
+}
+.logoContent {
+  display: flex;
+}
+.appName {
+  font-size: 3.1vh;
+  font-weight: bold;
+  color: #2B2B2B;
+}
+.purple {
+  color: #5238ED;
+}
+.searchContent {
+  display: flex;
+  width: 60vh;
+  height: 5.5vh;
+  background-color: #E9E9E9;
+  border-radius: 0.9920634920634921vh;
+  padding-left: 2.5vh;
+  padding-right: 2vh;
+}
+.searchBar {
+  display: flex;
+  width: 55vh;
+  height: 5.5vh;
+  background-color: transparent;
+  border-radius: 0.9920634920634921vh;
+  border: none;
+  font-size: 1.8vh;
+  font-weight: 600;
+  color: #2B2B2B;
+}
+.fa-search {
+  font-size: 1.8vh;
+  margin: 0 auto;
+  margin-top: 1.9vh;
+  color: #8A8A8A;
+}
+.filtersContent {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 0.8vh;
+  width: 90%;
+  height: 4.7vh;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn {
+  font-size: 1.8849206349206349vh;
+  font-weight: bold;
+  color: #4D4D4D;
+  background: none;
+}
+.btn.active {
+  line-height: 4.166666666666667vh;
+  border-bottom: 0.2976190476190476vh solid #5238ED;
+  color: #2B2B2B;
+}
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 20.833333333333332vh;
+  border: 0.0992063492063492vh solid #B8B8B8;
+  padding: 1.9841269841269842vh 1.9841269841269842vh;
+  z-index: 1;
+  text-align: center;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.fa-sort-down {
+  margin-left: 1.2vh;
+  font-size: 1.8849206349206349vh;
+}
+.btn.menu {
+  font-size: 1.7vh;
+  text-align: center;
+  font-weight: 600;
+  padding-top: 0.6944444444444444vh;
+  padding-bottom: 0.6944444444444444vh;
+}
+.capacidadCanchas {
+  min-width: 33.73015873015873vh;
+}
+.list {
+  margin-top: 17.857142857142858vh;
+	height: 100%;
+	padding: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: overlay;
+	-webkit-overflow-scrolling: touch;
+}
+.list .items {
+  margin: 0 auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: box;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-lines: multiple;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	-webkit-align-content: flex-start;
+	align-content: flex-start;
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	align-items: flex-start;
+	width: calc(100% - 150px);
+}
+.filterDiv {
+	float: left;
+	color: #ffffff !important;
+	width: 134px;
+	display: none;
+	margin: 10px;
+}
+.ghost {
+	float: left;
+	color: #ffffff !important;
+	width: 134px;
+	display: block!important;
+	margin: 10px;
+}
+.show {
+  display: inline-block;
+}
+.container {
+  overflow: hidden;
+  background: white;
+}
+.campnou {
+  width: 100%;
+}
+.favorito {
+  width: 35px;
+  margin-bottom: 10px;
+}
+.titulo-cancha {
+  display: flex;
+  justify-content: space-around;
+  background-image: url(img/campnou.png);
+  background-size: cover;
+  height: 160px;
+  align-items: flex-end;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.puntuacion {
+  display: flex;
+  align-items: center;
+}
+.puntuacion h3 {
+  font-size: 10px;
+}
+.puntuacion img {
+  width: 15px;
+}
+.nombre-puntacion {
+  margin-bottom: 10px;
+  color: rgb(218, 218, 218);
+}
+.titulo {
+  margin-left: 2px;
+  font-size: 15px;
+}
+.box1 {
+  width: 20.833333333333332vh;
+  height: 32vh;
+  margin: 20px;
+  border: 1px solid rgb(184, 184, 184);
+  border-radius: 10px;
+}
