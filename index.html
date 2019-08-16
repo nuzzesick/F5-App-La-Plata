@@ -1,290 +1,118 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Reservá hoy mismo tu cancha y comenzá a jugar.">
-    <meta name="keywords" content="appName, futbol, futbol5, canchas, complejos, complejos de futbol, futbol6, futbol7, futbol9, futbol11, la plata, buenos aires, futbol en la plata, torneos, reservar, reservar canchas, gratis">
-    <meta name="author" content="whoknows">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>appName</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/app.css">
-    <link rel="stylesheet" href="assets/responsive.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  </head>
-  <body>
-    <div id="app">
-      <header class="header">
-          <div class="headerContent">
-            <div class="logoContent">
-              <h1 class="appName">app</h1>
-              <h1 class="appName purple">Name</h1>
-            </div>
-            <div class="searchContent">
-              <input id="search" class="searchBar" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off"><i class="fas fa-search"></i>
-            </div>
-            <div class="downloadContent">
-            </div>
-          </div>
-          <div class="filtersContent">
-            <button class="btn active" onclick="filterSelection('all')">Recientemente agregados</button>
-            <div class="dropdown">
-              <button class="btn">Ordenar por servicios<i class="fas fa-sort-down"></i></button>
-              <div class="dropdown-content">
-                <button class="btn menu" onclick="filterSelection('techados')">Techados</button><br>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="btn">Ordenar por capacidad de cancha<i class="fas fa-sort-down"></i></button>
-              <div class="dropdown-content capacidadCanchas">
-                <button class="btn menu" onclick="filterSelection('5')">Fútbol 5</button><br>
-                <button class="btn menu" onclick="filterSelection('6')">Fútbol 6</button><br>
-                <button class="btn menu" onclick="filterSelection('7')">Fútbol 7</button><br>
-                <button class="btn menu" onclick="filterSelection('9')">Fútbol 9</button><br>
-                <button class="btn menu" onclick="filterSelection('11')">Fútbol 11</button>
-              </div>
-            </div>
-            <button class="btn" onclick="filterSelection('favorites')">Favoritos</button>
-          </div>
-        </header>
-        <div id="container" class="container">
-          <ul class="list" id="search-ul">
-            <div class="items" tabindex="1">
-              <div class="box1">
-   <div class="titulo-cancha">
-     <div class="nombre-puntacion">
-       <h3 class="titulo">Camp Nou</h3>
-       <div class="puntuacion">
-         <img src="assets/img/star.svg" />
-         <h3>4.2/5 (Google)</h3>
-       </div>
-     </div>
-     <img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-   </div>
- </div>
- <div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
-<div class="box1">
-<div class="titulo-cancha">
-<div class="nombre-puntacion">
-<h3 class="titulo">Camp Nou</h3>
-<div class="puntuacion">
-<img src="assets/img/star.svg" />
-<h3>4.2/5 (Google)</h3>
-</div>
-</div>
-<img src="assets/img/favorite.svg" alt="favorito" class="favorito" />
-</div>
-</div>
+const app = new Vue ({
+  el: '#app',
+  data: {
+    name: 'Bitflix',
+    version: '0.5.0',
+    main: 'Movies',
+    loadContent: 'We are getting some rich movies..',
+    background: 'https://assets.nflxext.com/ffe/siteui/vlv3/783e3b0f-b68e-440e-a980-0e1c19cbe76c/84589119-43db-46f9-a24c-c841fb01868d/AR-en-20190318-popsignuptwoweeks-perspective_alpha_website_small.jpg',
+    status: 'Bitflix is operating correctly.',
+    description1: 'Bitflix lets you watch the latest movies in HD for free and without ads, for free.',
+    description2: 'We are an open source project.',
+    description3: 'We are from Argentina but expanding us.',
+    credits1: 'Made with ',
+    credits2: 'by a geek team from Buenos Aires.',
+    social: [
+      {name: 'Twitter' , link: '' , icon: 'fab fa-twitter-square'},
+      {name: 'Instagram' , link: '' , icon: 'fab fa-instagram'},
+      {name: 'Github' , link:'https://github.com/bitflix-official' , icon: 'fab fa-github-square'}
+    ],
+    genres: [
+      {name: 'Action'},
+      {name: 'Adventure'},
+      {name: 'Animation'},
+      {name: 'Comedy'},
+      {name: 'Drama'},
+      {name: 'Family'},
+      {name: 'Fantasy'},
+      {name: 'Horror'},
+      {name: 'Music'},
+      {name: 'Mystery'},
+      {name: 'Romance'},
+      {name: 'Sci-Fi'},
+      {name: 'Thriller'},
+      {name: 'War'}
+    ],
+    complejos: [
+      {
+        name: 'Camp Nou',
+        rate: '4.2 (Google)',
+        location: '13 e 68 y 69',
+        canchas: '4 canchas',
+        jugadores: '5 jugadores',
+        servicios: 'Vestuario',
+        background: 'https://lh3.googleusercontent.com/b5QGuQpOScBt33T2C8C2rFTefJwFLfG7cPsaMq_ihD8XzGLgjUVbLsT41KnOGfulgPpcn09u=w600-h0',
+        whatsapp: 'https://api.whatsapp.com/send?phone=5492213606778'
+      },
+      {
+        name: 'Abran cancha',
+        rate: '4.8 (Google)',
+        location: '7 e 72 y 73',
+        canchas: '2 canchas',
+        jugadores: '5 jugadores',
+        servicios: 'Vestuario Bar/Restaurante Parrilla',
+        background: 'https://scontent.faep9-2.fna.fbcdn.net/v/t1.0-9/54268275_1012105125655220_2025072574643306496_n.jpg?_nc_cat=101&_nc_oc=AQlXBBjeFa5o3bIVfRMnMORtojxtCuycua236zkWEkCXNq-jAebEzFpYOXduKAXw7pQ&_nc_ht=scontent.faep9-2.fna&oh=4111e159c42ef2906f1ec177ab39595f&oe=5DDE2615'
+      }
+    ]
+  }
+})
 
-            </div>
-          </ul>
-        </div>
-      </div>
-    <script src="js/vue.js" charset="utf-8"></script>
-    <script src="js/app.js" charset="utf-8"></script>
-    <script src="js/favorites.js" charset="utf-8"></script>
-  </body>
-</html>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+function search() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("search-ul");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
