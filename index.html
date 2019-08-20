@@ -8,100 +8,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>appName</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/app.css">
+    <link rel="stylesheet" media="screen and (max-width: 600px)" href="assets/app.css">
     <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
   <body>
     <div id="app">
       <header class="header">
-          <div class="headerContent">
-            <div class="logoContent">
-              <h1 class="appName">app</h1>
-              <h1 class="appName purple">Name</h1>
-            </div>
-            <div class="searchContent">
-              <input id="search" class="searchBar" onkeyup="search()" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off"><i class="fas fa-search"></i>
-            </div>
-            <div class="downloadContent">
-            </div>
+        <div class="search">
+          <div class="searchContent">
+            <input id="search" class="searchBar" onkeyup="search()" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off">
+            <i class="fas fa-search"></i>
           </div>
-          <div class="filtersContent">
-            <button class="btn active" onclick="filterSelection('all')">Recientemente agregados</button>
-            <div class="dropdown">
-              <a class="btn">Ordenar por servicios<i class="fas fa-sort-down"></i></a>
-              <div class="dropdown-content">
-                <button class="btn menu" onclick="filterSelection('techados')">Techados</button><br>
-              </div>
-            </div>
-            <div class="dropdown">
-              <a class="btn">Ordenar por cantidad de jugadores<i class="fas fa-sort-down"></i></a>
-              <div class="dropdown-content capacidadCanchas">
-                <button class="btn menu" onclick="filterSelection('5')">5 jugadores</button><br>
-                <button class="btn menu" onclick="filterSelection('6')">6 jugadores</button><br>
-                <button class="btn menu" onclick="filterSelection('7')">7 jugadores</button><br>
-                <button class="btn menu" onclick="filterSelection('9')">9 jugadores</button><br>
-                <button class="btn menu" onclick="filterSelection('11')">11 jugadores</button>
-              </div>
-            </div>
-            <button class="btn" onclick="filterSelection('favorites')">Favoritos</button>
-          </div>
-        </header>
-        <div id="container" class="container">
-          <ul class="list" id="search-ul">
+        </div>
+      </header>
+      <ul class="list" id="search-ul">
             <div class="items" tabindex="1">
               <template v-for="complejo in complejos">
-                <li class="filterDiv"><a style="display: none" href="#">{{complejo.name}}</a>
-                  <div class="complejo">
-                    <div class="topComplejo">
-                      <div class="picBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
-                      <div class="topInfo">
-                        <div class="topContent">
-                          <h3 class="complejoName">{{complejo.name}}</h3>
-                          <h6 class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}</h6>
-                          <div class="favoriteContent">
-                            <a class="favoriteButton" href="#"><i class="fas fa-heart"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="info">
-                        <div class="infoContent">
-                          <div class="location">
-                            <div class="locationIcon"></div><h5 class="infoText">{{complejo.location}}</h5>
-                          </div>
-                          <div class="cantCanchas">
-                            <div class="courtIcon"></div><h5 class="infoText">{{complejo.canchas}}</h5>
-                          </div>
-                          <div class="players">
-                            <div class="playerIcon"></div><h5 class="infoText">{{complejo.jugadores}}</h5>
-                          </div>
-                          <div class="services">
-                            <div class="servicesIcon"></div><h5 class="infoText">{{complejo.servicios}}</h5>
-                          </div>
-                        </div>
-                        <div class="buttons">
-                          <a class="reservarButton" :href="complejo.whatsapp"><i class="fas fa-comments-dollar"></i>Reservar</a>
-                          <button id="extraInfo" class="extraInfo"><i class="fas fa-info"></i>Más info.</button>
-                        </div>
-                      </div>
-                    </div>
+                <li class="filterDiv">
+                  <a style="display: none;">{{complejo.name}}</a>
+                  <div class="cardContent">
+                    <div class="complejoName">{{complejo.name}}</div>
+                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}</div>
+                    <div class="complejoLocation"><i class="fas fa-map-marker-alt"></i>Ubicado en {{complejo.location}}</div>
+                    <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
                   </div>
                 </li>
-            </template>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
-            <li class="ghost favorites"></li>
+              </template>
             </div>
-          </ul>
+      </ul>
+      <div class="navbar">
+        <div class="navbarContent">
+          <div class="home">
+            <a class="item" href="#">
+              <div class="homeIcon"></div>
+              <div class="itemText">Inicio</div>
+            </a>
+              </div>
+          <div class="favorites">
+            <a class="item" href="#">
+              <div class="favoritesIcon"></div>
+              <div class="itemText">Favoritos</div>
+            </a>
+          </div>
+          <div class="about">
+            <a class="item" href="#">
+              <div class="aboutIcon"></div>
+              <div class="itemText">Más</div>
+            </a>
+          </div>
+          </div>
         </div>
       </div>
     <script src="js/vue.js" charset="utf-8"></script>
