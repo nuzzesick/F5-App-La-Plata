@@ -46,7 +46,7 @@
     display: none;
   }
   .header {
-    position: relative;
+    position: absolute;
     left: 2%;
     width: 96%;
     height: 60px;
