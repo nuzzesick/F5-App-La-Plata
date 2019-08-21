@@ -123,6 +123,15 @@
     margin-top: -0.5px;
     width: 49px;
     height: 43px;
+    background-image: url(icons/more.png);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+  }
+  .more:hover {
+    background-image: url(icons/more-active.png);
+  }
   }
   .btn {
     margin: 0 auto;
@@ -136,6 +145,8 @@
     color: #0588E8;
   }
   .dropbtn {
+    font-size: 14px;
+    padding-top: 25px;
     margin: 0 auto;
     text-decoration: none;
     color: #555555;
@@ -157,10 +168,7 @@
     font-size: 24px;
   }
   .fa-heart {
-    font-size: 24px;
-  }
-  .fa-ellipsis-h {
-    font-size: 24px;
+    font-size: 23px;
   }
   .favoritesIcon {
     width: 62px!important;
