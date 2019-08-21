@@ -9,12 +9,12 @@
     <title>appName</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="assets/app.css">
-    <link rel="stylesheet" href="assets/responsive.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
   <body>
     <div id="app">
       <header class="header">
+        <div class="logo">FútbolYa!</div>
         <div class="search">
           <div class="searchContent">
             <input id="search" class="searchBar" onkeyup="search()" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off">
@@ -25,43 +25,72 @@
       <ul class="list" id="search-ul">
             <div class="items" tabindex="1">
               <template v-for="complejo in complejos">
-                <li class="filterDiv">
-                  <a style="display: none;">{{complejo.name}}</a>
+                <li :id="complejo.id" class="filterDiv" :class="complejo.canchas + ' ' + complejo.futbol + ' ' + complejo.cesped + ' ' + complejo.infraestructura">
+                  <a style="display: none;">{{complejo.name}} {{complejo.id}} {{complejo.search}}</a>
                   <div class="cardContent">
                     <div class="complejoName">{{complejo.name}}</div>
-                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}</div>
+                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}} <p style="margin-left: 2px; display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800;">(</p>
+                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #4285f4">G</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #ea4335">o</p>
+                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #fbbc05">o</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #4285f4">g</p>
+                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #34a853">l</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #ea4335">e</p>
+                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800;">)</p></div>
+                    <div class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
+                    <div class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
                     <div class="complejoLocation"><i class="fas fa-map-marker-alt"></i>Ubicado en {{complejo.location}}</div>
                     <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
                   </div>
                 </li>
               </template>
             </div>
-      </ul>
-      <div class="navbar">
-        <div class="navbarContent">
-          <div class="home">
-            <a class="item" href="#">
-              <div class="homeIcon"></div>
-              <div class="itemText">Inicio</div>
-            </a>
+          </ul>
+        <div class="navbar">
+          <div id="btn-container" class="navbarContent">
+            <div class="home">
+              <a class="btn active" onclick="filterSelection('all')">
+                <div class="icon"><i class="far fa-futbol"></i>Todos</div>
+              </a>
+                </div>
+            <div class="favorites">
+              <a class="btn favoritesIcon" onclick="filterSelection('favorites')">
+                <div class="icon favoritesIcon"><i class="fas fa-heart"></i>Favoritos</div>
+              </a>
+            </div>
+            <div class="more">
+              <a onclick="menu()" class="dropbtn">Más</a>
+              <div id="menuOpen" class="dropdown-content">
+                <p class="separator">Infraestructura</p>
+                <a class="btn" onclick="filterSelection('Techado')">Techados</a>
+                <a class="btn" onclick="filterSelection('Abierto')">Abiertos</a>
+                <p class="separator">Tipo de césped</p>
+                <a class="btn" onclick="filterSelection('Natural')">Natural</a>
+                <a class="btn" onclick="filterSelection('Sintético')">Sintético</a>
+                <p class="separator">Capacidad de cancha</p>
+                <a class="btn" onclick="filterSelection('F11')">Fútbol 11</a>
+                <a class="btn" onclick="filterSelection('F9')">Fútbol 9</a>
+                <a class="btn" onclick="filterSelection('F7')">Fútbol 7</a>
+                <a class="btn" onclick="filterSelection('F6')">Fútbol 6</a>
+                <a class="btn" onclick="filterSelection('F5')">Fútbol 5</a>
               </div>
-          <div class="favorites">
-            <a class="item" href="#">
-              <div class="favoritesIcon"></div>
-              <div class="itemText">Favoritos</div>
-            </a>
-          </div>
-          <div class="about">
-            <a class="item" href="#">
-              <div class="aboutIcon"></div>
-              <div class="itemText">Más</div>
-            </a>
-          </div>
+              <div id="menuicon" class="dropdown-content">
+                <p class="separator">Infraestructura</p>
+                <a class="btn" onclick="filterSelection('Techado')">Techados</a>
+                <a class="btn" onclick="filterSelection('Abierto')">Abiertos</a>
+                <p class="separator">Tipo de césped</p>
+                <a class="btn" onclick="filterSelection('Natural')">Natural</a>
+                <a class="btn" onclick="filterSelection('Sintético')">Sintético</a>
+                <p class="separator">Capacidad de cancha</p>
+                <a class="btn" onclick="filterSelection('F11')">Fútbol 11</a>
+                <a class="btn" onclick="filterSelection('F9')">Fútbol 9</a>
+                <a class="btn" onclick="filterSelection('F7')">Fútbol 7</a>
+                <a class="btn" onclick="filterSelection('F6')">Fútbol 6</a>
+                <a class="btn" onclick="filterSelection('F5')">Fútbol 5</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    <script src="js/vue.js" charset="utf-8"></script>
     <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/vue.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/favorites.js" charset="utf-8"></script>
   </body>
