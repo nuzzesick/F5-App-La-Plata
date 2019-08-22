@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>appName</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="assets/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
@@ -15,34 +16,47 @@
     <div id="app">
       <header class="header">
         <div class="logo">FútbolYa!</div>
-        <div class="search">
+        <div id="search-content" class="search">
           <div class="searchContent">
             <input id="search" class="searchBar" onkeyup="search()" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off">
             <i class="fas fa-search"></i>
           </div>
         </div>
       </header>
-      <ul class="list" id="search-ul">
-            <div class="items" tabindex="1">
-              <template v-for="complejo in complejos">
-                <li :id="complejo.id" class="filterDiv" :class="complejo.canchas + ' ' + complejo.futbol + ' ' + complejo.cesped + ' ' + complejo.infraestructura">
-                  <a style="display: none;">{{complejo.name}} {{complejo.id}} {{complejo.search}}</a>
-                  <div class="cardContent">
-                    <div class="complejoName">{{complejo.name}}</div>
-                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}} <p style="margin-left: 2px; display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800;">(</p>
-                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #4285f4">G</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #ea4335">o</p>
-                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #fbbc05">o</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #4285f4">g</p>
-                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #34a853">l</p><p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800; color: #ea4335">e</p>
-                      <p style="display: inline; font-family: 'Google Sans' , sans-serif; font-weight: 800;">)</p></div>
-                    <div class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
-                    <div class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
-                    <div class="complejoLocation"><i class="fas fa-map-marker-alt"></i>Ubicado en {{complejo.location}}</div>
-                    <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
+      <ul class="list uk-animation-fade" id="search-ul">
+        <div class="items" tabindex="1">
+          <template v-for="complejo in complejos">
+            <li :uk-toggle="'target: #' + complejo.id + '-modal'" :id="complejo.id" class="filterDiv uk-animation-fade" :class="complejo.canchas + ' ' + complejo.futbol + ' ' + complejo.cesped + ' ' + complejo.infraestructura">
+              <a style="display: none;">{{complejo.name}} {{complejo.id}} {{complejo.search}}</a>
+                <div class="cardContent">
+                  <div class="complejoName">{{complejo.name}}</div>
+                  <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}/ 5 (Google)</div>
+                  <div class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
+                  <div class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
+                  <div class="complejoLocation"><i class="fas fa-map-marker-alt"></i>Ubicado en {{complejo.location}}</div>
+                  <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
+                </div>
+                <div :id="complejo.id + '-modal'" uk-modal>
+                  <div class="uk-modal-dialog uk-modal-body uk-animation-slide-bottom">
+                    <a class="uk-modal-close" type="button"><i class="fas fa-chevron-left"></i></a>
+                    <a class="fav-button uk-animation-scale-up" :class="complejo.id + '-fav'" href="#"><i class="fas fa-heart fav-icon"></i></a>
+                    <div class="complejoTitle">{{complejo.name}}</div>
+                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}/ 5 (Google)</div>
+                    <div style="margin-top: 4%" class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
+                    <div style="margin-top: 4%" class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
+                    <div class="reservaContainer">
+                      <a class="reservarButton":href="complejo.reserva">Reservar</a>
+                    </div>
+                    <div class="comoLlegar">Cómo llegar</div>
+                    <div style="text-align: center; font-size: 14px; font-weight: 500" class="complejoLocation">El complejo {{complejo.name}} se ubica en {{complejo.location}}</div>
+                    <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }" style="margin-top: -310px;"></div>
+                    <iframe :src="complejo.map" width="400" height="200" frameborder="0" style="border:0; margin-top: 20px;" allowfullscreen></iframe>
                   </div>
-                </li>
-              </template>
-            </div>
-          </ul>
+                </div>
+              </li>
+            </template>
+          </div>
+        </ul>
         <div class="navbar">
           <div id="btn-container" class="navbarContent">
             <div class="home">
@@ -90,6 +104,8 @@
         </div>
       </div>
     <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/js/uikit-icons.min.js"></script>
     <script src="js/vue.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/favorites.js" charset="utf-8"></script>
