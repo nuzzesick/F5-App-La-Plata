@@ -48,7 +48,7 @@ const app = new Vue ({
         cesped: 'Sintético',
         infraestructura: 'Techado',
         background: 'http://www.laguiax.com.ar/media/W1siZiIsInByb2R1Y3Rpb24vZ3VpYXMvMS9jb21lcmNpb3MvOTgxOS9mb3Rvcy9hcmNoaXZvLTg3MjEuanBlZyJdLFsicCIsInRodW1iIiwiOTAweDQ1MFx1MDAzZSJdXQ/IMG_8117.JPG?sha=bb3f8bc4713d5aa6',
-        reserva: '0221 453-0955'
+        reserva: 'tel:0221 453-0955'
       },
       {
         name: 'El Ayuntamiento',
