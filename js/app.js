@@ -21,6 +21,7 @@ const app = new Vue ({
         cesped: 'Sintético y Natural',
         infraestructura: 'Abierto',
         background: 'http://www.predio98.com.ar/imagenes/logo2.png',
+        map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.946902932161!2d-57.915474784214254!3d-34.95793948036933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e7ba354a1ac9%3A0x3623e334f2ea3c64!2sPredio+98!5e0!3m2!1ses-419!2sar!4v1566459636235!5m2!1ses-419!2sar',
         reserva: 'https://api.whatsapp.com/send?phone=5492216258871'
       },
       {
