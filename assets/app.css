@@ -15,9 +15,9 @@
   -ms-user-select: none;
   user-select: none;
   font-family: 'Poppins' , sans-serif!important;
-  background: white;
+  background: #181818;
   }
-  img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+  img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white.png"] {
     display: none;
   }
   *{
@@ -47,8 +47,11 @@
   input {
     font-family: 'Poppins' , sans-serif;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
   .header {
-    background-color: white!important;
+    background-color: #181818!important;
     margin-top: -5px!important;
   }
   .logo {
@@ -61,14 +64,20 @@
     font-size: 26px;
     width: 180px;
   }
+  .uk-button-default {
+    color: #ffffff!important;
+  }
+  .uk-navbar-toggle {
+    color: #ffffff!important;
+  }
   .logoContent {
     font-weight: bold;
     font-family: 'Poppins' , sans-serif!important;
-    color: #282828!important;
+    color: #ffffff!important;
     font-size: 1.4rem!important
   }
   .logoF {
-    background: linear-gradient(180deg, #441975 10%, #005BCF 100%);
+    background: linear-gradient(180deg, #441975 10%, #1a7c3e 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0!important;
@@ -81,7 +90,7 @@
     margin-top: 5px;
     width: 100%;
     height: 55px;
-    background: #FFFFFF;
+    background: #181818;
     box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
   }
@@ -90,12 +99,13 @@
     margin: 0 auto;
     width: 100%;
     height: 55px;
-    background: #FFFFFF;
+    background: #181818;
     border-radius: 10px;
     border: none;
     line-height: 15px;
     font-family: 'Poppins' , sans-serif;
-    color: #202020;
+    color: #ffffff;
+    font-weight: 500;
   }
   .searchContent {
     margin: 0 auto;
@@ -103,7 +113,7 @@
   }
   .fa-search {
     font-size: 1.2rem!important;
-    color: #282828!important;
+    color: white!important
   }
   .menu-button {
     margin-left: 15px!important;
@@ -117,12 +127,12 @@
     margin-bottom: 5px!important;
   }
   .navbar {
-    position: absolute;
+    position: fixed;
     left: 2%;
     width: 96%;
     height: 60px;
-    background: linear-gradient(180deg, #FFFFFF 33.33%, rgba(255, 255, 255, 0.92) 100%);
-    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.15);
+    background: #181818;
+    box-shadow: 0px 0px 6px #060606;
     border-radius: 56px;
     bottom: 20px;
   }
@@ -165,15 +175,15 @@
   .btn {
     margin: 0 auto;
     text-decoration: none;
-    color: #8E8E8E;
+    color: #dddddd;
     font-weight: 500;
   }
   .btn:hover {
-    color: #005BCF;
+    color: #1a7c3e;
     font-weight: 600;
   }
   .btn.active {
-    color: #005BCF;
+    color: #1a7c3e;
     font-weight: 600;
   }
   .dropbtn {
@@ -181,12 +191,12 @@
     padding-top: 25px;
     margin: 0 auto;
     text-decoration: none;
-    color: #8E8E8E;
+    color: #dddddd;
     text-align: center;
     font-weight: 600;
   }
   .dropbtn:hover {
-    color: #0560E8;
+    color: #1a7c3e;
   }
   .icon {
     margin: 0 auto;
@@ -234,7 +244,7 @@
     margin: 0 auto;
     width: 382px;
     height: 255px;
-    background: linear-gradient(137.63deg, #FFFFFF 34.58%, rgba(230, 230, 230, 0.53) 100%);
+    background: #121212;
     box-shadow: 8px 8px 13px rgba(0, 0, 0, 0.06), -2px -2px 13px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
     margin-bottom: 52px;
@@ -249,14 +259,14 @@
     margin: 0 auto;
   }
   .complejoName {
-    color: #202020;
+    color: #dddddd;
     font-weight: 700;
     font-size: 19px;
     line-height: 20px;
   }
   .complejoRate {
     margin-top: 5%;
-    color: #545454;
+    color: #c4c4c4;
     font-weight: bold;
     line-height: 17px;
     font-size: 13px;
@@ -269,7 +279,7 @@
   .complejoDescription {
     font-weight: 500;
     font-size: 14px;
-    color: #373737;
+    color: #cfcfcf;
     line-height: 22px;
     margin-top: 9%;
     width: 210px;
@@ -277,19 +287,19 @@
   .complejoServices {
     font-weight: 500;
     font-size: 13px;
-    color: #373737;
+    color: #cfcfcf;
     line-height: 22px;
     margin-top: 9%;
     width: 200px;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    #181818-space: nowrap;
     overflow: hidden;
   }
   .complejoLocation {
     margin-top: 5%;
     font-size: 12px;
     line-height: 17px;
-    color: #373737;
+    color: #cfcfcf;
     font-weight: bold;
   }
   .fa-map-marker-alt {
@@ -311,7 +321,7 @@
     margin-left: -134px;
     margin-top: -544px;
     position: absolute;
-    background: #FFFFFF;
+    background: #181818;
     box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.06), -2px -2px 13px rgba(0, 0, 0, 0.06);
     border-radius: 5px;
     width: 200px;
@@ -321,7 +331,7 @@
   .dropdown-content a {
     font-size: 15px;
     font-weight: 500;
-    color: #555555;
+    color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -332,7 +342,7 @@
     background-image: url(icons/check.png);
     background-size: 16px 16px;
     background-repeat: no-repeat;
-    background-color: #f3f1f1;
+    background-color: #111111;
     background-position-y: center;
     background-origin: content-box;
   }
@@ -344,26 +354,26 @@
     font-size: 15px;
     text-align: center;
     font-weight: 600;
-    color: #909090;
+    color: #8d8d8d;
     margin: 10px;
   }
   .uk-modal {
     padding: 0!important;
     height: 100%!important;
-    background: white!important;
+    background: #181818!important;
   }
   .uk-modal-dialog {
     height: 100%;
-    background: white;
+    background: #181818;
     overflow-x: hidden!important;
   }
   .uk-modal-close {
-    color: white;
+    color: #181818;
     font-weight: 600;
     font-size: 26px;
   }
   .uk-modal-close:hover {
-    color: #0560E8!important;
+    color: #fff!important;
   }
   .fav-button {
     float: right;
@@ -378,10 +388,10 @@
     color: white;
   }
   .unfavorite {
-    color: #e91e05;
+    color: #ff4848;
   }
   .unfavorite:hover {
-    color: #e91e05;
+    color: #ff4848;
   }
   .fav-icon {
     font-size: 28px!important;
@@ -389,11 +399,11 @@
   .complejoTitle {
     width: 270px;
     margin-top: 25px;
-    color: white;
+    color: #ffffff;
     font-weight: 600;
     font-size: 28px;
     overflow: hidden;
-    white-space: nowrap;
+    #181818-space: nowrap;
     text-overflow: ellipsis;
   }
   .reservaContainer {
@@ -412,13 +422,13 @@
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
-    background: #005BCF;
+    background: #1a7c3e;
     box-shadow: 3px 4px 7px rgba(43, 43, 43, 0.23);
     border-radius: 5px;
     margin-bottom: 25px;
   }
   .reservarButton:hover {
-    background: #0063ab;
+    background: #1a7c3e;
     color: white;
   }
   .comoLlegar {
@@ -428,18 +438,18 @@
     font-size: 18px;
   }
   .uk-offcanvas-bar {
-    background: white!important
+    background: #181818!important
   }
   .uk-modal-body {
     padding: 0!important
   }
   .cardTopContent {
     padding: 30px 30px;
-    background: linear-gradient(180deg, rgba(68, 25, 117, 0.9) 0%, rgba(0, 91, 207, 0.9) 100%)!important;
+    background: linear-gradient(180deg, rgb(49, 49, 49) 0%, rgba(17, 17, 17, 0.9) 100%)!important;
   }
   .extraInfo {
-    background: white;
-    border-radius: 60px 60px 0px 0px;
+    background: #181818;
+    border-radius: 60px 0px 0px 0px;
     margin-top: -25px;
     margin-left: -12px;
     margin-right: -12px;
@@ -450,7 +460,7 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    color: #202020;
+    color: #dddddd;
     font-family: 'Poppins' , sans-serif;
   }
   .mapsButton {
@@ -464,12 +474,12 @@
     font-size: 17px;
     font-weight: 500;
     color: #fff;
-    background: #1c337d;
-    box-shadow: 3px 4px 7px rgba(43, 43, 43, 0.23);
+    background: #161616;
+    box-shadow: 0 0 3px black;
     border-radius: 5px;
   }
   .mapsButton:hover {
-    background: #0063ab;
+    background: #161616;
     color: white;
   }
 }
