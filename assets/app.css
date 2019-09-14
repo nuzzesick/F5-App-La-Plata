@@ -47,15 +47,6 @@
   input {
     font-family: 'Poppins' , sans-serif;
   }
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  ::-webkit-scrollbar-thumb {
-    display: none;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    display: none;
-  }
   .header {
     background-color: white!important;
     margin-top: -5px!important;
@@ -223,6 +214,7 @@
     width: 62px!important;
   }
   .list {
+    position: fixed;
     padding: 0;
     list-style: none;
     display: inline-block;
@@ -362,7 +354,8 @@
   }
   .uk-modal-dialog {
     height: 100%;
-    background: white
+    background: white;
+    overflow-x: hidden!important;
   }
   .uk-modal-close {
     color: white;
