@@ -3,9 +3,9 @@ const app = new Vue ({
   el: '#app',
   data: function(){
     return {
-    name: 'FútbolYa!',
-    version: '0.9.0',
-    instagram: 'getfutbolya',
+    name: 'Footbi',
+    version: '0.10.0',
+    instagram: 'footbiapp',
     complejos: [
       /*
       {
@@ -29,6 +29,66 @@ const app = new Vue ({
         reserva: 'https://api.whatsapp.com/send?phone=549'
       },
       */
+      {
+        name: 'Il Calcio',
+        id: 'ilCalcio',
+        search: 'el calcio il calcio calcio',
+        rate: '3.7',
+        location: '3 n° 515 e/ 42 y 43',
+        canchas: '1',
+        futbol: 'F5',
+        cesped: 'Sintético',
+        infraestructura: 'Techado',
+        background: 'https://scontent.faep9-2.fna.fbcdn.net/v/t1.0-9/24301087_1827496487285332_6115538359415238733_n.jpg?_nc_cat=106&_nc_oc=AQmQsJpkvQA2N-3HoVcnUb43m0Tc_08JEOXtRDxFJ8434X-huCGySnZ9NSgPHflk6kI&_nc_ht=scontent.faep9-2.fna&oh=b063569a05dcd093a8cd8fc92e731e9f&oe=5E01D5DF',
+        image1: 'https://lh5.googleusercontent.com/proxy/_gr4xlwmBZZWsCgYO2R7GmLv6iXtp5EQB2TrOYPBnINqL3odzddmEhA61QMERN7Jaz-ZpnJWkNzg9_h1Dritavw-VhJrvGjUpGv1OhG7OFBfTcWQ_TKz6IOqlp8BO7OCKa54VtrbWMr7Brd5yJJyjPaA1Io=w203-h361-k-no',
+        image2: 'https://lh3.googleusercontent.com/proxy/T8Gg1Zw75pBJXKdZ0XCv400HhWDmG7wc7mY24c_pIa7GRrgiXaeXwHPYjsOq1Kb5I94baEO67TDXPZ_jyfXowNUO98FIT7uxFnA-aoGEXshfKt1FwGPPVeCIRmQLBNhjeZoNwem-m-gLpi_dgj7JzxJf50A=w203-h361-k-no',
+        image3: 'https://lh5.googleusercontent.com/p/AF1QipPe_G1nXQ6eGnT080X-j7X8VI3pUuMWevk1dQdD=w203-h152-k-no',
+        image4: 'https://lh5.googleusercontent.com/p/AF1QipOzfZ1SThyBWG2PXOxqbZa76sKy0_HEMJ6LHlo5=w203-h270-k-no',
+        image5: 'https://lh3.googleusercontent.com/proxy/yEFBcafBzjfnwOh5d8OMwO8aOSdrybzST9EP8YOEzvkWiuS_uC7PlDhhudUTY8V8es3vogioyN91PzhydcBsg0emxetFDvLZKwdED5d4LwUzTtcTvTU2u-c9l1UW-s1vfVbKtfYU3Y96bgJqqcx21CaH6NM=w203-h361-k-no',
+        image6: 'https://geo3.ggpht.com/cbk?panoid=dRHlf7VnfW3a6cC34gXkfQ&output=thumbnail&cb_client=maps_sv.tactile.gps&thumb=2&w=203&h=100&yaw=233.16931&pitch=0&thumbfov=100',
+        map: 'https://goo.gl/maps/J9N5VjB5LoUEChaDA',
+        reserva: 'tel: 0221 422-9657'
+      },
+      {
+        name: 'El Desafío',
+        id: 'elDesafio',
+        search: 'el desafio desafio desafío',
+        rate: '4.2',
+        location: 'Av. 32 y 135',
+        canchas: '2',
+        futbol: 'F5 F7',
+        cesped: 'Sintético',
+        infraestructura: 'Abierto',
+        background: 'https://scontent.faep9-1.fna.fbcdn.net/v/t1.0-9/19400032_287013241771424_7708160559036664054_n.jpg?_nc_cat=102&_nc_oc=AQmaWynXJLHK3kM85YxShMSRLrn5yIpVYPwYto7EoRAYzV4PlWX9y8HfOfI7hngtZUo&_nc_ht=scontent.faep9-1.fna&oh=24ebf5f1cfc072a69b9a4f5269749fd9&oe=5E3A4DE3',
+        image1: 'https://lh5.googleusercontent.com/p/AF1QipNX47rxf3J1F84W7O7-JNJ_3pzeLGtWOQietZIt=w203-h270-k-no',
+        image2: 'https://lh5.googleusercontent.com/p/AF1QipNe81Gq9ruWmqJwMsE8jRWeuGfuthYvsqX_als0=w203-h114-k-no',
+        image3: 'https://lh5.googleusercontent.com/p/AF1QipMrpIT-w-kqYHvdIyfhOfDIyRFzgq-dQARyLb-1=w203-h270-k-no',
+        image4: 'https://lh5.googleusercontent.com/p/AF1QipO80Uk6-awK0DVhMQXdimzYY1D3hiBeq3p7C8Qw=w203-h360-k-no',
+        image5: 'https://lh5.googleusercontent.com/p/AF1QipOur5ljIK60T1xjn4BDcp9c8-YLEkvjU3cD-qvA=w203-h114-k-no',
+        image6: 'https://lh5.googleusercontent.com/p/AF1QipN-hRJhQ9FDoFbkp3bToBi_6W3cFjswIVGXynwB=w203-h152-k-no',
+        map: 'https://goo.gl/maps/19SWd5T1hcX6j3c97',
+        reserva: 'tel: 0221 479-2969'
+      },
+      {
+        name: 'Challenger Fútbol 5',
+        id: 'challengerFutbol5',
+        search: 'challenger chalenger chalenjer futbol 5 cinco',
+        rate: '4.4',
+        location: 'Av. 137 315 e/ 38 y 39',
+        canchas: '3',
+        futbol: 'F5',
+        cesped: 'Sintético',
+        infraestructura: 'Techado',
+        background: 'https://scontent.faep9-1.fna.fbcdn.net/v/t1.0-9/10703675_699816543443514_6751025323488636881_n.jpg?_nc_cat=102&_nc_oc=AQlhtdpQTIWQuHnLuyIno-IkC8ZcAXxjGhzkNN6712LGAU9DUqBh0RPr_sCFyyXRgn8&_nc_ht=scontent.faep9-1.fna&oh=29d7624989ec521d083dd68234ca6afd&oe=5DF7906F',
+        image1: 'https://lh5.googleusercontent.com/p/AF1QipPn82J4DEYk9QYZsLK-BC7Xcayi02cmL1o_TB7A=w203-h152-k-no',
+        image2: 'https://lh5.googleusercontent.com/p/AF1QipOCpzn87Je6fKCNtLPrCUeABsM783uwWIwIRwlQ=w203-h152-k-no',
+        image3: 'https://lh5.googleusercontent.com/p/AF1QipMDaBt7dopn05E5zP8gbny-VGAL3X9HNJryYJqn=w205-h100-k-no',
+        image4: 'https://lh5.googleusercontent.com/p/AF1QipMHUa5CL8S_VvR2OzgD3pT5jW0PtqUmDnUb-tim=w203-h114-k-no',
+        image5: 'https://lh6.googleusercontent.com/proxy/sl4j-u3fdGj386gmBgOCVBWyO4E5GrJl04BRfn8yOqJZWuF4fCOPSu8wCAoX78m5UF3i5ywmNlhzUnAn3oKWIYjMvnhHhpC9F8VpoLOxpAiBnRu7KBF7Ow8s_jPLADq8hht0ybjo5ZaULQoRTcow-0tUx4E=w203-h338-k-no',
+        image6: 'https://lh5.googleusercontent.com/p/AF1QipMY-J7uobEkC94zS1rhcGXihzuIR8B0T2vuAeZO=w203-h114-k-no',
+        map: 'https://goo.gl/maps/3QFNPp4YPp8uiruf8',
+        reserva: 'tel: 0221 470-4978'
+      },
       {
         name: 'CRISFA',
         id: 'crisfa',
@@ -114,7 +174,7 @@ const app = new Vue ({
         id: 'lineaDeTres',
         search: 'linea de tres linea de 3 sin orsai',
         rate: '4.0',
-        location: 'Calle 11 n° e/ 70 y 71',
+        location: 'Calle 11 e/ 70 y 71',
         canchas: '2',
         futbol: 'F5',
         cesped: 'Sintético',
