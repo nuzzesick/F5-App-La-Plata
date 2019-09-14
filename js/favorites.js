@@ -6,6 +6,9 @@ var elAyuntamientobutton = $(".elAyuntamiento-fav");
 var laCalderaDelDiablobutton = $(".laCalderaDelDiablo-fav");
 var lineaDeTresbutton = $(".lineaDeTres-fav");
 var predioNoventaOchobutton = $(".predioNoventaOcho-fav");
+var garraCharruabutton = $(".garraCharrua-fav");
+var estadioSietebutton = $(".estadioSiete-fav");
+var crisfabutton = $(".crisfa-fav");
 //Get
   window.onload = () => {
     //abranCancha
@@ -91,6 +94,42 @@ var predioNoventaOchobutton = $(".predioNoventaOcho-fav");
       predioNoventaOchobutton.removeClass("unfavorite");
       predioNoventaOchobutton.addClass("favorite");
       predioNoventaOchobutton.attr("onclick", "favpredioNoventaOcho()");
+    }
+    //garraCharrua
+    if (localStorage.getItem('garraCharrua')=='true') {
+      garraCharruabutton.removeClass("favorite");
+      garraCharruabutton.addClass("unfavorite");
+      document.getElementById('garraCharrua').classList.add('favorites');
+      garraCharruabutton.attr("onclick", "quitgarraCharrua()");
+    }
+    else {
+      garraCharruabutton.removeClass("unfavorite");
+      garraCharruabutton.addClass("favorite");
+      garraCharruabutton.attr("onclick", "favgarraCharrua()");
+    }
+    //estadioSiete
+    if (localStorage.getItem('estadioSiete')=='true') {
+      estadioSietebutton.removeClass("favorite");
+      estadioSietebutton.addClass("unfavorite");
+      document.getElementById('estadioSiete').classList.add('favorites');
+      estadioSietebutton.attr("onclick", "quitestadioSiete()");
+    }
+    else {
+      estadioSietebutton.removeClass("unfavorite");
+      estadioSietebutton.addClass("favorite");
+      estadioSietebutton.attr("onclick", "favestadioSiete()");
+    }
+    //crisfa
+    if (localStorage.getItem('crisfa')=='true') {
+      crisfabutton.removeClass("favorite");
+      crisfabutton.addClass("unfavorite");
+      document.getElementById('crisfa').classList.add('favorites');
+      crisfabutton.attr("onclick", "quitcrisfa()");
+    }
+    else {
+      crisfabutton.removeClass("unfavorite");
+      crisfabutton.addClass("favorite");
+      crisfabutton.attr("onclick", "favcrisfa()");
     }
   }
 //functions
@@ -191,4 +230,46 @@ var predioNoventaOchobutton = $(".predioNoventaOcho-fav");
       predioNoventaOchobutton.removeClass("unfavorite");
       predioNoventaOchobutton.addClass("favorite");
       predioNoventaOchobutton.attr("onclick", "favpredioNoventaOcho()");
+    }
+    function favgarraCharrua() {
+      document.getElementById('garraCharrua').classList.add('favorites');
+      localStorage.setItem('garraCharrua', 'true');
+      garraCharruabutton.removeClass("favorite");
+      garraCharruabutton.addClass("unfavorite");
+      garraCharruabutton.attr("onclick", "quitgarraCharrua()");
+    }
+    function quitgarraCharrua() {
+      document.getElementById('garraCharrua').classList.remove('favorites');
+      localStorage.removeItem('garraCharrua');
+      garraCharruabutton.removeClass("unfavorite");
+      garraCharruabutton.addClass("favorite");
+      garraCharruabutton.attr("onclick", "favgarraCharrua()");
+    }
+    function favestadioSiete() {
+      document.getElementById('estadioSiete').classList.add('favorites');
+      localStorage.setItem('estadioSiete', 'true');
+      estadioSietebutton.removeClass("favorite");
+      estadioSietebutton.addClass("unfavorite");
+      estadioSietebutton.attr("onclick", "quitestadioSiete()");
+    }
+    function quitestadioSiete() {
+      document.getElementById('estadioSiete').classList.remove('favorites');
+      localStorage.removeItem('estadioSiete');
+      estadioSietebutton.removeClass("unfavorite");
+      estadioSietebutton.addClass("favorite");
+      estadioSietebutton.attr("onclick", "favestadioSiete()");
+    }
+    function favcrisfa() {
+      document.getElementById('crisfa').classList.add('favorites');
+      localStorage.setItem('crisfa', 'true');
+      crisfabutton.removeClass("favorite");
+      crisfabutton.addClass("unfavorite");
+      crisfabutton.attr("onclick", "quitcrisfa()");
+    }
+    function quitcrisfa() {
+      document.getElementById('crisfa').classList.remove('favorites');
+      localStorage.removeItem('crisfa');
+      crisfabutton.removeClass("unfavorite");
+      crisfabutton.addClass("favorite");
+      crisfabutton.attr("onclick", "favcrisfa()");
     }
