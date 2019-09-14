@@ -1,4 +1,12 @@
 @media screen and (max-width: 600px) {
+  @font-face {
+    font-family: 'nico_mojiregular';
+    src: url('fonts/nicomoji-regular-webfont.woff2') format('woff2'),
+         url('fonts/nicomoji-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
   body, html {
   margin: 0;
   padding: 0;
@@ -6,7 +14,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'Montserrat' , sans-serif!important;
+  font-family: 'Poppins' , sans-serif!important;
   background: white;
   }
   img[src*="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
@@ -26,7 +34,7 @@
     outline: 0;
     border: none;
     cursor: pointer;
-    font-family: 'Montserrat' , sans-serif;
+    font-family: 'Poppins' , sans-serif;
   }
   button:focus {
     outline: 0;
@@ -37,7 +45,7 @@
     border: none;
   }
   input {
-    font-family: 'Montserrat' , sans-serif;
+    font-family: 'Poppins' , sans-serif;
   }
   ::-webkit-scrollbar {
     display: none;
@@ -49,22 +57,37 @@
     display: none;
   }
   .header {
-    position: absolute;
-    left: 2%;
-    width: 96%;
-    height: 60px;
+    background-color: white!important;
+    margin-top: -5px!important;
   }
   .logo {
+    margin: 0 auto;
     color: #373737;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     margin-top: 20px;
     text-align: center;
     font-weight: bold;
     font-size: 26px;
+    width: 180px;
+  }
+  .logoContent {
+    font-weight: bold;
+    font-family: 'Poppins' , sans-serif!important;
+    color: #282828!important;
+    font-size: 1.4rem!important
+  }
+  .logoF {
+    background: linear-gradient(180deg, #441975 10%, #005BCF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0!important;
+    display: inline;
+    font-family: 'Poppins' , sans-serif;
+    font-size: 1.9rem;
   }
   .search {
     display: flex;
-    margin-top: 20px;
+    margin-top: 5px;
     width: 100%;
     height: 55px;
     background: #FFFFFF;
@@ -74,30 +97,42 @@
   .searchBar {
     font-size: 14px;
     margin: 0 auto;
-    width: 94%;
+    width: 100%;
     height: 55px;
     background: #FFFFFF;
     border-radius: 10px;
     border: none;
-    font-weight: 600;
     line-height: 15px;
+    font-family: 'Poppins' , sans-serif;
+    color: #202020;
   }
   .searchContent {
     margin: 0 auto;
     width: 90%;
   }
   .fa-search {
-    color: #8C8C8C;
+    font-size: 1.2rem!important;
+    color: #282828!important;
+  }
+  .menu-button {
+    margin-left: 15px!important;
+    border: none!important;
+    background: transparent!important;
+    padding: 0px!important;
+    padding-right: 10px!important;
+    font-size: 17px!important;
+  }
+  .uk-margin {
+    margin-bottom: 5px!important;
   }
   .navbar {
     position: absolute;
     left: 2%;
     width: 96%;
     height: 60px;
-    border: 1px solid #D2D2D2;
-    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    background: white;
+    background: linear-gradient(180deg, #FFFFFF 33.33%, rgba(255, 255, 255, 0.92) 100%);
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.15);
+    border-radius: 56px;
     bottom: 20px;
   }
   .navbarContent {
@@ -139,36 +174,47 @@
   .btn {
     margin: 0 auto;
     text-decoration: none;
-    color: #555555;
+    color: #8E8E8E;
+    font-weight: 500;
   }
   .btn:hover {
-    color: #0588E8;
+    color: #005BCF;
+    font-weight: 600;
   }
   .btn.active {
-    color: #0588E8;
+    color: #005BCF;
+    font-weight: 600;
   }
   .dropbtn {
     font-size: 14px;
     padding-top: 25px;
     margin: 0 auto;
     text-decoration: none;
-    color: #555555;
+    color: #8E8E8E;
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
   }
   .dropbtn:hover {
-    color: #0588E8;
+    color: #0560E8;
   }
   .icon {
     margin: 0 auto;
     width: 40px;
     height: 24px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     text-align: center;
+  }
+  .icon.active {
+    font-weight: 800;
   }
   .fa-futbol {
     font-size: 24px;
+  }
+  .fa-futbol.active {
+    background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   }
   .fa-heart {
     font-size: 23px;
@@ -176,63 +222,56 @@
   .favoritesIcon {
     width: 62px!important;
   }
-  .favoritesIcon:hover {
-    color: #e91e05;
-  }
-  .favoritesIcon.active {
-    color: #e91e05;
-  }
   .list {
     padding: 0;
     list-style: none;
     display: inline-block;
-    width: 96%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 180px;
     margin-left: 2%;
   }
   .items {
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 3px;
+    padding-right: 15px;
+    padding-top: 20px;
     overflow-x: hidden;
     overflow-y: overlay;
     -webkit-overflow-scrolling: touch;
-    height: 65vh;
+    height: 75vh;
   }
   .filterDiv {
-    width: 100%;
-    height: 260px;
-    background: #FFFFFF;
-    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin-bottom: 40px;
+    margin: 0 auto;
+    width: 382px;
+    height: 255px;
+    background: linear-gradient(137.63deg, #FFFFFF 34.58%, rgba(230, 230, 230, 0.53) 100%);
+    box-shadow: 8px 8px 13px rgba(0, 0, 0, 0.06), -2px -2px 13px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    margin-bottom: 52px;
     display: none;
   }
   .show {
     display: inline-block;
   }
   .cardContent {
-    padding-top: 30px;
-    width: 90%;
+    padding-top: 25px;
+    width: 300px;
     margin: 0 auto;
   }
   .complejoName {
-    color: #373737;
-    font-weight: bold;
-    line-height: 24px;
+    color: #202020;
+    font-weight: 700;
     font-size: 19px;
+    line-height: 20px;
   }
   .complejoRate {
-    margin-top: 3.5%;
-    color: #747474;
+    margin-top: 5%;
+    color: #545454;
     font-weight: bold;
     line-height: 17px;
-    font-size: 12px;
+    font-size: 13px;
   }
   .fa-star {
     margin-right: 10px;
-    color: #ffbe56;
+    color: #F0AF4E;
     font-size: 11px;
   }
   .complejoDescription {
@@ -240,7 +279,7 @@
     font-size: 14px;
     color: #373737;
     line-height: 22px;
-    margin-top: 8%;
+    margin-top: 9%;
     width: 210px;
   }
   .complejoServices {
@@ -248,14 +287,14 @@
     font-size: 13px;
     color: #373737;
     line-height: 22px;
-    margin-top: 7%;
+    margin-top: 9%;
     width: 200px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
   .complejoLocation {
-    margin-top: 2.5%;
+    margin-top: 5%;
     font-size: 12px;
     line-height: 17px;
     color: #373737;
@@ -268,28 +307,28 @@
   .complejoBackground {
     box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
-    width: 110px;
-    height: 110px;
-    background-size: 110px 110px;
+    width: 70px;
+    height: 70px;
+    background-size: 70px 70px;
     background-repeat: no-repeat;
-    margin-top: -165px;
-    float: right
+    margin-top: -55px;
+    float: right;
   }
   .dropdown-content {
     display: none;
     margin-left: -134px;
     margin-top: -544px;
     position: absolute;
-    background-color: #ffffff;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.06), -2px -2px 13px rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
     width: 200px;
     overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px;
   }
   .dropdown-content a {
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 500;
     color: #555555;
     padding: 12px 16px;
     text-decoration: none;
@@ -299,13 +338,15 @@
   .dropdown-content a.active {
     background-position-x: left;
     background-image: url(icons/check.png);
-    background-size: 14px 14px;
+    background-size: 16px 16px;
     background-repeat: no-repeat;
     background-color: #f3f1f1;
     background-position-y: center;
     background-origin: content-box;
   }
-  .dropdown a:hover {background-color: #ddd;}
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
   .show {display: block;}
   .separator {
     font-size: 15px;
@@ -321,61 +362,67 @@
   }
   .uk-modal-dialog {
     height: 100%;
+    background: white
   }
   .uk-modal-close {
-    color: #373737;
+    color: white;
     font-weight: 600;
     font-size: 26px;
   }
   .uk-modal-close:hover {
-    color: #0588E8!important;
+    color: #0560E8!important;
   }
   .fav-button {
     float: right;
     font-size: 26px;
     font-weight: 500;
-    margin-top: 5px;
+    margin-top: 2px;
   }
   .favorite {
-    color: #ababab;
+    color: white;
   }
   .favorite:hover {
-    color: #e91e05;
+    color: white;
   }
   .unfavorite {
     color: #e91e05;
   }
   .unfavorite:hover {
-    color: #ababab;
+    color: #e91e05;
   }
   .fav-icon {
     font-size: 28px!important;
   }
   .complejoTitle {
+    width: 270px;
     margin-top: 25px;
-    color: #373737;
+    color: white;
     font-weight: 600;
     font-size: 28px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .reservaContainer {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 40px;
   }
   .reservarButton {
     height: 40px;
-    border: 1px solid #E9E9E9;
     box-sizing: border-box;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
     margin: 0 auto;
-    background: #0588E8;
     width: 100%;
     display: block;
     border-radius: 5px;
-    line-height: 36px;
+    line-height: 38px;
     font-size: 18px;
     font-weight: 600;
     color: #ffffff;
+    background: #005BCF;
+    box-shadow: 3px 4px 7px rgba(43, 43, 43, 0.23);
+    border-radius: 5px;
+    margin-bottom: 25px;
   }
   .reservarButton:hover {
     background: #0063ab;
@@ -386,6 +433,50 @@
     text-align: center;
     font-weight: 500;
     font-size: 18px;
-}
+  }
+  .uk-offcanvas-bar {
+    background: white!important
+  }
+  .uk-modal-body {
+    padding: 0!important
+  }
+  .cardTopContent {
+    padding: 30px 30px;
+    background: linear-gradient(180deg, rgba(68, 25, 117, 0.9) 0%, rgba(0, 91, 207, 0.9) 100%)!important;
+  }
+  .extraInfo {
+    background: white;
+    border-radius: 60px 60px 0px 0px;
+    margin-top: -25px;
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .details {
+    text-align: center;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #202020;
+    font-family: 'Poppins' , sans-serif;
+  }
+  .mapsButton {
+    height: 40px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    line-height: 38px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    background: #1c337d;
+    box-shadow: 3px 4px 7px rgba(43, 43, 43, 0.23);
+    border-radius: 5px;
+  }
+  .mapsButton:hover {
+    background: #0063ab;
+    color: white;
   }
 }
