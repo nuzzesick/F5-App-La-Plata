@@ -9,6 +9,9 @@ var predioNoventaOchobutton = $(".predioNoventaOcho-fav");
 var garraCharruabutton = $(".garraCharrua-fav");
 var estadioSietebutton = $(".estadioSiete-fav");
 var crisfabutton = $(".crisfa-fav");
+var challengerFutbol5button = $(".challengerFutbol5-fav");
+var elDesafiobutton = $(".elDesafio-fav");
+var ilCalciobutton = $(".ilCalcio-fav");
 //Get
   window.onload = () => {
     //abranCancha
@@ -130,6 +133,42 @@ var crisfabutton = $(".crisfa-fav");
       crisfabutton.removeClass("unfavorite");
       crisfabutton.addClass("favorite");
       crisfabutton.attr("onclick", "favcrisfa()");
+    }
+    //ChallengerFutbol5
+    if (localStorage.getItem('challengerFutbol5')=='true') {
+      challengerFutbol5button.removeClass("favorite");
+      challengerFutbol5button.addClass("unfavorite");
+      document.getElementById('challengerFutbol5').classList.add('favorites');
+      challengerFutbol5button.attr("onclick", "quitchallengerFutbol5()");
+    }
+    else {
+      challengerFutbol5button.removeClass("unfavorite");
+      challengerFutbol5button.addClass("favorite");
+      challengerFutbol5button.attr("onclick", "favchallengerFutbol5()");
+    }
+    //elDesafio
+    if (localStorage.getItem('elDesafio')=='true') {
+      elDesafiobutton.removeClass("favorite");
+      elDesafiobutton.addClass("unfavorite");
+      document.getElementById('elDesafio').classList.add('favorites');
+      elDesafiobutton.attr("onclick", "quitelDesafio()");
+    }
+    else {
+      elDesafiobutton.removeClass("unfavorite");
+      elDesafiobutton.addClass("favorite");
+      elDesafiobutton.attr("onclick", "favelDesafio()");
+    }
+    //ilCalcio
+    if (localStorage.getItem('ilCalcio')=='true') {
+      ilCalciobutton.removeClass("favorite");
+      ilCalciobutton.addClass("unfavorite");
+      document.getElementById('ilCalcio').classList.add('favorites');
+      ilCalciobutton.attr("onclick", "quitilCalcio()");
+    }
+    else {
+      ilCalciobutton.removeClass("unfavorite");
+      ilCalciobutton.addClass("favorite");
+      ilCalciobutton.attr("onclick", "favilCalcio()");
     }
   }
 //functions
@@ -272,4 +311,46 @@ var crisfabutton = $(".crisfa-fav");
       crisfabutton.removeClass("unfavorite");
       crisfabutton.addClass("favorite");
       crisfabutton.attr("onclick", "favcrisfa()");
+    }
+    function favchallengerFutbol5() {
+      document.getElementById('challengerFutbol5').classList.add('favorites');
+      localStorage.setItem('challengerFutbol5', 'true');
+      challengerFutbol5button.removeClass("favorite");
+      challengerFutbol5button.addClass("unfavorite");
+      challengerFutbol5button.attr("onclick", "quitchallengerFutbol5()");
+    }
+    function quitchallengerFutbol5() {
+      document.getElementById('challengerFutbol5').classList.remove('favorites');
+      localStorage.removeItem('challengerFutbol5');
+      challengerFutbol5button.removeClass("unfavorite");
+      challengerFutbol5button.addClass("favorite");
+      challengerFutbol5button.attr("onclick", "favchallengerFutbol5()");
+    }
+    function favelDesafio() {
+      document.getElementById('elDesafio').classList.add('favorites');
+      localStorage.setItem('elDesafio', 'true');
+      elDesafiobutton.removeClass("favorite");
+      elDesafiobutton.addClass("unfavorite");
+      elDesafiobutton.attr("onclick", "quitelDesafio()");
+    }
+    function quitelDesafio() {
+      document.getElementById('elDesafio').classList.remove('favorites');
+      localStorage.removeItem('elDesafio');
+      elDesafiobutton.removeClass("unfavorite");
+      elDesafiobutton.addClass("favorite");
+      elDesafiobutton.attr("onclick", "favelDesafio()");
+    }
+    function favilCalcio() {
+      document.getElementById('ilCalcio').classList.add('favorites');
+      localStorage.setItem('ilCalcio', 'true');
+      ilCalciobutton.removeClass("favorite");
+      ilCalciobutton.addClass("unfavorite");
+      ilCalciobutton.attr("onclick", "quitilCalcio()");
+    }
+    function quitilCalcio() {
+      document.getElementById('ilCalcio').classList.remove('favorites');
+      localStorage.removeItem('ilCalcio');
+      ilCalciobutton.removeClass("unfavorite");
+      ilCalciobutton.addClass("favorite");
+      ilCalciobutton.attr("onclick", "favilCalcio()");
     }
