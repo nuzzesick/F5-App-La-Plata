@@ -3,54 +3,119 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="Reservá hoy mismo tu cancha y comenzá a jugar.">
-    <meta name="keywords" content="appName, futbol, futbol5, canchas, complejos, complejos de futbol, futbol6, futbol7, futbol9, futbol11, la plata, buenos aires, futbol en la plata, torneos, reservar, reservar canchas, gratis">
+    <meta name="keywords" content="{{name}}, fútbolya, futbolya, futbol, futbol5, canchas, complejos, complejos de futbol, futbol6, futbol7, futbol9, futbol11, la plata, buenos aires, futbol en la plata, torneos, reservar, reservar canchas, gratis">
     <meta name="author" content="whoknows">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>appName</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <title>FútbolYa!</title>
+    <link rel="shortcut icon" type="image/png" href="assets/logo/logo-icon.png"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.7/css/uikit.min.css" />
     <link rel="stylesheet" media="screen and (max-width: 600px)" href="assets/app.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   </head>
   <body>
     <div id="app">
-      <header class="header">
-        <div class="logo">FútbolYa!</div>
-        <div id="search-content" class="search">
-          <div class="searchContent">
-            <input id="search" class="searchBar" onkeyup="search()" type="text" placeholder="Buscá complejos en La Plata.." autocomplete="off">
-            <i class="fas fa-search"></i>
-          </div>
+      <nav class="header uk-navbar-container uk-margin" uk-navbar>
+        <div class="nav-overlay uk-navbar-left">
+          <button class="uk-button uk-button-default menu-button" type="button" uk-toggle="target: #offcanvas-overlay"><i class="fas fa-bars"></i></button>
+            <div id="offcanvas-overlay" uk-offcanvas="overlay: true">
+              <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <h3 style="color: #282828; font-weight: 600; font-family: 'Poppins' , sans-serif;">Hola.</h3>
+                <p style="color: #545454; font-weight: 500; font-size: 17px">Gracias por descargar la beta de {{name}} para Android. Pronto se encontrará disponible en Google Play y AppStore. <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <p style="font-size: 15px; color: #545454; font-weight: 500">Con <i class="fas fa-heart" style="color: #441975; font-size: 14px"></i> el equipo de {{name}}</p>
+                  <br>
+                  <br>
+                  <p><a :href="'https://instagram.com/' + instagram" style="font-size: 14px; color: black" target="_blank"><i style="font-size: 16px; margin-right: 5px" class="fab fa-instagram"></i> Seguinos en Instagram</a></p>
+                </p>
+              </div>
+            </div>
+          <a class="uk-navbar-item uk-logo logoContent">{{name}}</a>
         </div>
-      </header>
+        <div class="nav-overlay uk-navbar-right">
+          <a class="uk-navbar-toggle" uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"><i class="fas fa-search"></i></a>
+        </div>
+        <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+          <div class="uk-navbar-item uk-width-expand">
+            <input type="text" id="search" onkeyup="searchFunction()" class="uk-search uk-search-navbar uk-width-1-1 uk-search-input searchBar" autocomplete="off" type="search" placeholder="Buscá complejos en La Plata" autofocus>
+          </div>
+          <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+        </div>
+      </nav>
       <ul class="list uk-animation-fade" id="search-ul">
         <div class="items" tabindex="1">
           <template v-for="complejo in complejos">
             <li :uk-toggle="'target: #' + complejo.id + '-modal'" :id="complejo.id" class="filterDiv uk-animation-fade" :class="complejo.canchas + ' ' + complejo.futbol + ' ' + complejo.cesped + ' ' + complejo.infraestructura">
-              <a style="display: none;">{{complejo.name}} {{complejo.id}} {{complejo.search}}</a>
+              <h6 style="display: none;">{{complejo.name}} {{complejo.id}} {{complejo.search}}</h6>
                 <div class="cardContent">
-                  <div class="complejoName">{{complejo.name}}</div>
-                  <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}/ 5 (Google)</div>
+                  <div class="topContent">
+                    <div class="complejoName">{{complejo.name}}</div>
+                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}} <p style="display: inline; color: #6F6F6F; font-weight: 600;"> (Google)</p></div>
+                    <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
+                  </div>
                   <div class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
                   <div class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
                   <div class="complejoLocation"><i class="fas fa-map-marker-alt"></i>Ubicado en {{complejo.location}}</div>
-                  <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }"></div>
                 </div>
                 <div :id="complejo.id + '-modal'" uk-modal>
                   <div class="uk-modal-dialog uk-modal-body uk-animation-slide-bottom">
-                    <a class="uk-modal-close" type="button"><i class="fas fa-chevron-left"></i></a>
-                    <a class="fav-button uk-animation-scale-up" :class="complejo.id + '-fav'" href="#"><i class="fas fa-heart fav-icon"></i></a>
-                    <div class="complejoTitle">{{complejo.name}}</div>
-                    <div class="complejoRate"><i class="fas fa-star"></i>{{complejo.rate}}/ 5 (Google)</div>
-                    <div style="margin-top: 4%" class="complejoDescription">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
-                    <div style="margin-top: 4%" class="complejoServices">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
-                    <div class="reservaContainer">
-                      <a class="reservarButton":href="complejo.reserva">Reservar</a>
+                    <div class="cardTopContent">
+                      <a class="uk-modal-close" type="button"><i class="fas fa-chevron-left"></i></a>
+                      <a class="fav-button uk-animation-scale-up" :class="complejo.id + '-fav'" href="#"><i class="fas fa-heart fav-icon"></i></a>
+                      <div class="complejoTitle">{{complejo.name}}</div>
+                      <div class="complejoRate" style="color: #C9C9C9; font-size: 16px"><i class="fas fa-star"></i>{{complejo.rate}} <p style="display: inline; color: #AAAAAA; font-weight: 500;"> (Google)</p></div>
+                      <div class="reservaContainer">
+                        <a class="reservarButton" :href="complejo.reserva">Reservar</a>
+                        <a class="mapsButton" :href="complejo.map" target="_blank"><i class="fas fa-map-marker-alt" style="color:white"></i> Ver en Google Maps</a>
+                      </div>
+                      <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }" style="margin-top: -260px"></div>
                     </div>
-                    <div class="comoLlegar">Cómo llegar</div>
-                    <div style="text-align: center; font-size: 14px; font-weight: 500" class="complejoLocation">El complejo {{complejo.name}} se ubica en {{complejo.location}}</div>
-                    <div class="complejoBackground" :style="{ backgroundImage: 'url(' + complejo.background + ')' }" style="margin-top: -310px;"></div>
-                    <iframe :src="complejo.map" width="400" height="200" frameborder="0" style="border:0; margin-top: 20px;" allowfullscreen></iframe>
+                    <div class="extraInfo">
+                      <h4 class="details">Detalles</h4>
+                      <div style="padding: 20px 60px">
+                        <div class="complejoDescription" style="margin-top: -5px; font-size: 16px; width: 300px; text-align: center">Este complejo <p style="display: inline; text-transform: lowercase">{{complejo.infraestructura}}</p> posee {{complejo.canchas}} cancha(s) de {{complejo.futbol}}.</div>
+                        <div class="complejoServices" style="width: 300px; font-size: 15px; white-space: initial; margin: 0 auto; margin-top: 10px; margin-bottom: 20px; text-align: center">Césped <p style="display: inline; font-weight:bold">{{complejo.cesped}}</p></div>
+                        <h5 style="font-family: 'Poppins' , sans-serif; text-align: center; font-weight: 700; color: rgb(32, 32, 32); font-size: 18px;">Fotos</h5>
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="sets: true">
+                          <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m">
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image1" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image2" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image3" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image4" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image5" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                            <li>
+                              <img style="width: 400px; height: 100px; padding-right: 10px" :src="complejo.image6" alt="">
+                              <div class="uk-position-center uk-panel"></div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -66,7 +131,7 @@
                 </div>
             <div class="favorites">
               <a class="btn favoritesIcon" onclick="filterSelection('favorites')">
-                <div class="icon favoritesIcon"><i class="fas fa-heart"></i>Favoritos</div>
+                <div class="icon favoritesIcon"><i class="far fa-heart"></i>Favoritos</div>
               </a>
             </div>
             <div class="more">
